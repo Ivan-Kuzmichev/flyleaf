@@ -6,7 +6,6 @@
                 <p>{{ $t('home-description') }}</p>
                 <span @click="toggleModal()">text</span>
             </div>
-            <svg-icon name="john" />
         </div>
         <!-- <Authorization :show="showModal" @close="toggleModal()" /> -->
     </div>

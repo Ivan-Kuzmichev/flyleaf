@@ -20,7 +20,7 @@ const config = {
 
     plugins: [],
 
-    components: true,
+    components: ['~/components', '~/components/base/', '~/components/modals/'],
 
     buildModules: [
         '@nuxt/typescript-build',

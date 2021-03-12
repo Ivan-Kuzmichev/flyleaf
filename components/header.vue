@@ -1,9 +1,15 @@
 <template>
     <header class="header">
         <Logo />
-        <!-- <LanguageSelection /> -->
-        <ColorMode />
-        <!-- <Navigation /> -->
+        <client-only>
+            <LanguageSelection />
+            <ColorSheme />
+            <Navigation />
+
+            <template slot="placeholder">
+                <p>Loading...</p>
+            </template>
+        </client-only>
     </header>
 </template>
 

@@ -19,8 +19,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
+
 export default Vue.extend({
-    name: 'ColorMode',
+    name: 'ColorSheme',
+    methods: {
+        nextTheme() {},
+    },
 });
 </script>
 

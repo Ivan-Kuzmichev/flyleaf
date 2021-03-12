@@ -13,6 +13,7 @@ const config = {
             { hid: 'description', name: 'description', content: '' },
         ],
         link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+        script: [],
     },
 
     css: ['~/assets/styles/index.scss'],
@@ -94,6 +95,13 @@ if (config.dev) {
             browserOptions: {},
         },
     };
+
+    config.head.script.push({
+        async: true,
+        defer: true,
+        'data-website-id': 'f7bbb9c0-bb40-4408-9304-499162139899',
+        src: 'https://umami.piserver.ga/umami.js',
+    });
 }
 
 export default config;

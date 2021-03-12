@@ -1,0 +1,9 @@
+.dropdown-transition-enter-active,
+.dropdown-transition-leave-active {
+    transition: all 1s;
+}
+.dropdown-transition-enter,
+.dropdown-transition-leave-to {
+    opacity: 0;
+    transform: translateY(30px);
+}

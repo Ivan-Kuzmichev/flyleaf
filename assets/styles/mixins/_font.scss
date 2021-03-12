@@ -1,0 +1,45 @@
+@mixin initFont($config, $font) {
+    $path: #{map-get($font, path)}#{to-lower-case(#{map-get($font, name)})};
+    $configWeight: map-get($config, weight);
+    $configStyle: map-get($config, style);
+
+    @each $style in map-get($font, style) {
+        @each $weight in map-get($font, weight) {
+            $src: ();
+
+            @each $format in map-get($font, format) {
+                @if ($format == 'variations') {
+                    $src: append(
+                        $src,
+                        url('#{$path}-variable.woff2')
+                            format('woff2-variations')
+                    );
+                } @else {
+                    $fontNameWeight: if(
+                        map-get($configWeight, $weight) == '',
+                        '',
+                        '-#{map-get($configWeight, $weight)}'
+                    );
+                    $fontNameStyle: if(
+                        map-get($configStyle, $style) == '',
+                        '',
+                        '-#{map-get($configStyle, $style)}'
+                    );
+                    $src: append(
+                        $src,
+                        url('#{$path}#{$fontNameWeight}#{$fontNameStyle}.#{$format}')
+                            format('#{$format}')
+                    );
+                }
+            }
+
+            @font-face {
+                font-family: map-get($font, name);
+                font-weight: $weight;
+                font-style: $style;
+                font-display: swap;
+                src: join($src, (), comma);
+            }
+        }
+    }
+}

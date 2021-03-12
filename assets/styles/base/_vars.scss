@@ -1,0 +1,67 @@
+.dark-mode {
+    --main: #fff;
+    --bg-main: #333;
+    --main-font: #fff;
+    --shadow: rgba(255, 255, 255, 0.1);
+    --card: #000;
+
+    //button
+    --button-bg: #fff;
+    --button-text: #000;
+}
+
+.light-mode {
+    --main: #000;
+    --bg-main: #fff;
+    --main-font: #000;
+    --shadow: rgba(0, 0, 0, 0.4);
+    --card: #f5f5f7;
+
+    //button
+    --button-bg: #000;
+    --button-text: #fff;
+}
+
+$breakpoint: (
+    576: 540,
+    768: 720,
+    992: 960,
+    1200: 1140,
+    1400: 1320,
+);
+
+$fontConfig: (
+    weight: (
+        200: 'extra-light',
+        300: 'light',
+        400: 'regular',
+        500: 'medium',
+        600: 'semi-bold',
+        700: 'bold',
+    ),
+    style: (
+        normal: '',
+        italic: 'italic',
+    ),
+);
+
+$oswald: (
+    name: 'Oswald',
+    weight: (
+        200,
+        300,
+        400,
+        500,
+        600,
+        700,
+    ),
+    style: (
+        normal,
+    ),
+    format: (
+        'variations',
+        'woff2',
+        'woff',
+    ),
+    path: '~static/fonts/',
+);

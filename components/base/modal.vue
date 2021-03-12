@@ -1,0 +1,80 @@
+<template>
+    <div v-if="show" class="modal-container" :class="`modal--${modalName}`">
+        <div class="backdrop" @click="close()"></div>
+        <transition name="modal-transition">
+            <div class="modal">
+                <div class="modal__header">
+                    <svg-icon class="close" name="close" @click="close()" />
+                </div>
+                <div class="modal__content">
+                    <slot></slot>
+                </div>
+            </div>
+        </transition>
+    </div>
+</template>
+
+<script lang="ts">
+import Vue from 'vue';
+export default Vue.extend({
+    name: 'Modal',
+    props: {
+        show: {
+            type: Boolean,
+            default: false,
+        },
+        modalName: {
+            type: String,
+            required: true,
+        },
+    },
+    methods: {
+        close() {
+            this.$emit('close');
+        },
+    },
+});
+</script>
+
+<style lang="scss" scoped>
+.modal-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backdrop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 370px;
+    background-color: var(--bg-main);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: flex-end;
+
+    .close {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+}
+</style>

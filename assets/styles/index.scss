@@ -1,0 +1,23 @@
+@use './mixins/px-to-rem' as mr;
+@use './mixins/grid' as mg;
+@use './mixins/font' as mf;
+
+@import './base/vars';
+@import './base/transition';
+
+@include mf.initFont($fontConfig, $oswald);
+@include mg.initGrid('.container', $breakpoint, 30px);
+
+html {
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+    background-color: var(--bg-main);
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: mr.rem(40px);
+}

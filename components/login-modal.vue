@@ -34,10 +34,10 @@ export default {
 }
 
 .close {
+    margin-bottom: 20px;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     border: 1px solid #cfcfcf;
-    margin-bottom: 20px;
+    border-radius: 50%;
 }
 </style>

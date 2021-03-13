@@ -40,44 +40,45 @@ export default Vue.extend({
 @use '~/assets/styles/mixins/px-to-rem' as mr;
 
 .input {
-    background-color: var(--card);
-    max-width: 300px;
     position: relative;
+    max-width: 400px;
+    background-color: var(--card);
 
     .close {
+        position: absolute;
+        top: 50%;
+        right: 15px;
         width: 15px;
         height: 15px;
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
         color: var(--main);
+        cursor: pointer;
+        transform: translateY(-50%);
     }
 
     label {
         position: absolute;
         top: -10px;
         left: 0;
-        font-size: mr.rem(12px);
         padding: 0 15px;
+        color: var(--main);
+        font-size: mr.rem(12px);
         opacity: 1;
         transition: 0.5s ease-in;
-        color: var(--main);
     }
 
     input {
-        border: none;
-        width: 100%;
-        background-color: var(--card);
-        font-size: mr.rem(16px);
-        padding: 15px 30px 15px 15px;
         box-sizing: border-box;
+        padding: 15px 30px 15px 15px;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid transparent;
+        background-color: var(--card);
         color: var(--main);
+        font-size: mr.rem(16px);
 
         &:focus {
-            border-bottom: 2px solid var(--main);
             outline: none;
+            border-bottom: 2px solid var(--main);
         }
 
         &:placeholder-shown {

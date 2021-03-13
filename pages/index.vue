@@ -7,7 +7,7 @@
                 <span @click="toggleModal()">text</span>
             </div>
         </div>
-        <!-- <Authorization :show="showModal" @close="toggleModal()" /> -->
+        <Authorization :show="showModal" @close="toggleModal()" />
     </div>
 </template>
 
@@ -33,8 +33,8 @@ export default Vue.extend({
 
 .home-page {
     position: relative;
-    min-height: calc(100vh - 95px);
     padding: 15px;
+    min-height: calc(100vh - 95px);
 
     .icon {
         position: absolute;
@@ -46,14 +46,14 @@ export default Vue.extend({
 }
 
 .home-page__content {
-    color: var(--main-font);
-    max-width: 680px;
     margin-top: 10vh;
+    max-width: 680px;
+    color: var(--main-font);
 
     h1 {
+        text-transform: uppercase;
         font-weight: bold;
         font-size: mr.rem(34px);
-        text-transform: uppercase;
     }
 
     p {

@@ -4,6 +4,7 @@
 
 @import './base/vars';
 @import './base/transition';
+@import './base/animations';
 
 @include mf.initFont($fontConfig, $oswald);
 @include mg.initGrid('.container', $breakpoint, 30px);

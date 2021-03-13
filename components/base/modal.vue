@@ -41,35 +41,37 @@ export default Vue.extend({
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
     bottom: 0;
+    left: 0;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
 .backdrop {
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
     bottom: 0;
+    left: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal {
     position: relative;
     z-index: 1;
-    width: 100%;
-    max-width: 370px;
-    background-color: var(--bg-main);
     padding: 15px;
+    max-width: 370px;
+    width: 100%;
     border-radius: 10px;
+    background-color: var(--bg-main);
+    transform: translateY(-10vh);
 }
 
 .modal__header {
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 10px;
 
     .close {
         width: 20px;

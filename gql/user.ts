@@ -1,10 +1,10 @@
 import gql from 'graphql-tag';
 
 export const MUTATION_AUTH = gql`
-    mutation($email: String!, $password: String!) {
+    mutation auth($email: String!, $password: String!) {
         auth(userInput: { email: $email, password: $password }) {
-            access_token
-            refresh_token
+            accessToken
+            refreshToken
         }
     }
 `;

@@ -75,7 +75,7 @@ const config = {
 };
 
 if (config.dev) {
-    config.plugins.push('~/plugins/mocks.ts');
+    config.plugins.push('~/plugins/mocks');
 } else {
     config.modules.push('@nuxtjs/sentry');
 

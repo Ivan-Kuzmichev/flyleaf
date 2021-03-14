@@ -4,7 +4,13 @@
         <transition name="modal-transition">
             <div class="modal">
                 <div class="modal__header">
-                    <svg-icon class="close" name="close" @click="close()" />
+                    <div class="title">{{ title }}</div>
+                    <svg-icon
+                        class="close"
+                        name="close"
+                        role="button"
+                        @click="close()"
+                    />
                 </div>
                 <div class="modal__content">
                     <slot></slot>
@@ -24,6 +30,10 @@ export default Vue.extend({
             default: false,
         },
         modalName: {
+            type: String,
+            required: true,
+        },
+        title: {
             type: String,
             required: true,
         },
@@ -65,18 +75,33 @@ export default Vue.extend({
     width: 100%;
     border-radius: 10px;
     background-color: var(--bg-main);
-    transform: translateY(-10vh);
+    transform: translateY(-15vh);
 }
 
 .modal__header {
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .title {
+        font-size: 1.2rem;
+        color: var(--main-font);
+        opacity: 0.8;
+    }
 
     .close {
         width: 20px;
         height: 20px;
         cursor: pointer;
+        color: var(--main-font);
+        opacity: 0.8;
+        transition: 0.5s ease-in;
+
+        &:hover,
+        &:focus-visible {
+            opacity: 1;
+        }
     }
 }
 </style>

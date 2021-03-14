@@ -1,5 +1,5 @@
 import { GetterTree, ActionTree, MutationTree } from 'vuex';
-import { MUTATION_AUTH, QUERY_USER } from '~/gql/user';
+import { MUTATION_AUTH, QUERY_USER } from '~/gql';
 
 export interface IAuthTokens {
     accessToken: string | undefined;
@@ -33,7 +33,7 @@ export const getters: GetterTree<RootState, RootState> = {
 
 export const mutations: MutationTree<RootState> = {
     SET_TOKEN: (state, auth: any) => (state.auth = auth),
-    SET_USER: (state, user: any) => (state.auth = user),
+    SET_USER: (state, user: any) => (state.user = user),
 };
 
 export const actions: ActionTree<RootState, RootState> = {
@@ -52,8 +52,8 @@ export const actions: ActionTree<RootState, RootState> = {
 
             if (data?.auth) {
                 commit('SET_TOKEN', {
-                    accessToken: data.auth.access_token,
-                    refreshToken: data.auth.refresh_token,
+                    accessToken: data.auth.accessToken,
+                    refreshToken: data.auth.refreshToken,
                 });
             }
         } catch (error) {

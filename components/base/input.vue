@@ -4,9 +4,9 @@
             id="Phone Number"
             v-model="value"
             type="tel"
-            placeholder="Phone"
+            :placeholder="placeholder"
         />
-        <label for="phone">Phone Number</label>
+        <label v-if="placeholder" for="phone">{{ placeholder }}</label>
         <transition name="dropdown-transition">
             <svg-icon
                 v-if="value.length"
@@ -15,7 +15,6 @@
                 @click="clear()"
             />
         </transition>
-        <div></div>
     </div>
 </template>
 
@@ -23,6 +22,12 @@
 import Vue from 'vue';
 export default Vue.extend({
     name: 'Input',
+    props: {
+        placeholder: {
+            type: String,
+            default: null,
+        },
+    },
     data() {
         return {
             value: '',

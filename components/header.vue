@@ -1,19 +1,19 @@
 <template>
     <header class="header">
         <Logo />
+        <LanguageSelection />
         <client-only>
-            <LanguageSelection />
             <ColorSheme />
-            <Navigation />
 
             <template slot="placeholder">
-                <div class="skeleton-container" aria-hidden="true">
-                    <div class="skeleton"></div>
-                    <div class="skeleton"></div>
-                    <div class="skeleton"></div>
-                </div>
+                <svg-icon
+                    name="theme/auto"
+                    class="color-sheme-loading"
+                    aria-hidden="true"
+                />
             </template>
         </client-only>
+        <Navigation />
     </header>
 </template>
 
@@ -40,35 +40,10 @@ export default Vue.extend({
     }
 }
 
-.skeleton-container {
-    display: flex;
-}
-
-.skeleton {
-    position: relative;
-    overflow: hidden;
-    margin: 0 5px;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background: var(--card);
-    opacity: 0.6;
-
-    &::before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-                to left,
-                transparent 0,
-                var(--main) 15%,
-                transparent 100%
-            )
-            center / 400% 100% no-repeat;
-        content: '';
-        animation: loading 1s infinite linear;
-    }
+.color-sheme-loading {
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+    margin-right: 10px;
 }
 </style>

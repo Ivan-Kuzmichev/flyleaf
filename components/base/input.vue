@@ -1,15 +1,15 @@
 <template>
     <div class="input">
         <input
-            id="Phone Number"
-            v-model="value"
-            type="tel"
+            :id="id"
+            v-model="inputValue"
             :placeholder="placeholder"
+            @input="handleInput"
         />
-        <label v-if="placeholder" for="phone">{{ placeholder }}</label>
+        <label v-if="placeholder" :for="id">{{ placeholder }}</label>
         <transition name="dropdown-transition">
             <svg-icon
-                v-if="value.length"
+                v-if="inputValue.length"
                 class="close"
                 name="close"
                 @click="clear()"
@@ -27,15 +27,27 @@ export default Vue.extend({
             type: String,
             default: null,
         },
+        value: {
+            type: String,
+            default: '',
+        },
+        id: {
+            type: String,
+            required: true,
+        },
     },
     data() {
         return {
-            value: '',
+            inputValue: this.value,
         };
     },
     methods: {
         clear() {
-            this.value = '';
+            this.inputValue = '';
+            this.handleInput();
+        },
+        handleInput() {
+            this.$emit('input', this.inputValue);
         },
     },
 });

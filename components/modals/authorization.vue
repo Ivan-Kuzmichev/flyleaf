@@ -1,13 +1,17 @@
 <template>
     <Modal
-        :show="show"
         modal-name="authorization"
+        :show="show"
         :title="$t('login')"
         @close="close()"
     >
         <form class="wrapper" @submit.prevent="submit">
-            <Input :placeholder="$t('email')" />
-            <Input :placeholder="$t('password')" />
+            <Input id="email" v-model="email" :placeholder="$t('email')" />
+            <Input
+                id="password"
+                v-model="password"
+                :placeholder="$t('password')"
+            />
             <button type="submit">test</button>
         </form>
     </Modal>
@@ -24,12 +28,18 @@ export default Vue.extend({
             type: Boolean,
         },
     },
+    data() {
+        return {
+            email: '',
+            password: '',
+        };
+    },
     methods: {
         ...mapActions('user', ['auth']),
         async submit() {
-            console.log('SUBMIT...');
-            // const { email, password } = this.form;
-            await this.auth({ email: 'ddd', password: 'qqq' });
+            if (this.email.length && this.password.length) {
+                await this.auth({ email: this.email, password: this.password });
+            }
         },
         close() {
             this.$emit('close');

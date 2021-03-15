@@ -15,17 +15,21 @@ interface LoginMutationVariables {
 
 export const auth = graphql.mutation<LoginMutation, LoginMutationVariables>(
     'auth',
-    (_req, res, ctx) => {
-        // const { username, password } = req.variables;
+    (req, res, ctx) => {
+        const { email, password } = req.variables;
 
-        return res(
-            ctx.data({
-                auth: {
-                    accessToken: '123',
-                    refreshToken: '456',
-                    __typename: 'test',
-                },
-            })
-        );
+        if (email === 'test@mail.com' && password === 'Test123!') {
+            return res(
+                ctx.data({
+                    auth: {
+                        accessToken: '123',
+                        refreshToken: '456',
+                        __typename: 'test',
+                    },
+                })
+            );
+        }
+
+        return res(ctx.errors([{ message: 'User not found' }]));
     }
 );

@@ -1,19 +1,21 @@
 import { graphql } from 'msw';
 
-interface LoginMutation {
-    auth: {
-        accessToken: string;
-        refreshToken: string;
-        __typename?: any;
-    };
+interface IAuthReq {
+    accessToken: string;
+    refreshToken: string;
+    __typename?: any;
 }
 
-interface LoginMutationVariables {
+interface ILoginMutation {
+    auth: IAuthReq | undefined;
+}
+
+interface ILoginMutationVariables {
     email: string;
     password: string;
 }
 
-export const auth = graphql.mutation<LoginMutation, LoginMutationVariables>(
+export const auth = graphql.mutation<ILoginMutation, ILoginMutationVariables>(
     'auth',
     (req, res, ctx) => {
         const { email, password } = req.variables;
@@ -30,6 +32,12 @@ export const auth = graphql.mutation<LoginMutation, LoginMutationVariables>(
             );
         }
 
-        return res(ctx.errors([{ message: 'User not found' }]));
+        return res(
+            ctx.errors([
+                {
+                    message: 'User not found',
+                },
+            ])
+        );
     }
 );

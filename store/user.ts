@@ -37,9 +37,10 @@ export const mutations: MutationTree<RootState> = {
 };
 
 export const actions: ActionTree<RootState, RootState> = {
-    async auth({ commit }, form: any) {
+    async auth({ commit }, form: any): Promise<boolean> {
         const { email, password } = form;
         const $apollo = this.app.apolloProvider.defaultClient;
+        let result = false;
 
         try {
             const { data } = await $apollo.mutate({
@@ -55,6 +56,8 @@ export const actions: ActionTree<RootState, RootState> = {
                     accessToken: data.auth.accessToken,
                     refreshToken: data.auth.refreshToken,
                 });
+
+                result = true;
             }
         } catch (error) {
             document.dispatchEvent(
@@ -67,6 +70,8 @@ export const actions: ActionTree<RootState, RootState> = {
                 })
             );
         }
+
+        return result;
     },
     async getUser({ commit }) {
         const $apollo = this.app.apolloProvider.defaultClient;

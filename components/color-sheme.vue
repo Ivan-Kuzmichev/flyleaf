@@ -22,9 +22,6 @@ import Vue from 'vue';
 
 export default Vue.extend({
     name: 'ColorSheme',
-    methods: {
-        nextTheme() {},
-    },
 });
 </script>
 

@@ -18,6 +18,7 @@
         "@nuxtjs/pwa": "^3.3.5",
         "@nuxtjs/sentry": "^5.0.2",
         "@nuxtjs/svg-sprite": "^0.5.2",
+        "@nuxtjs/toast": "^3.3.1",
         "@sentry/tracing": "^6.2.1",
         "core-js": "^3.9.1",
         "graphql-tag": "^2.11.0",

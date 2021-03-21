@@ -33,7 +33,14 @@ const config = {
         '@nuxtjs/apollo',
         'nuxt-i18n',
         '@nuxtjs/svg-sprite',
+        '@nuxtjs/toast',
     ],
+
+    toast: {
+        position: 'bottom-right',
+        duration: 3000,
+        keepOnHover: true,
+    },
 
     svgSprite: {
         input: '~/assets/svg/',

@@ -33,32 +33,36 @@ export default Vue.extend({
 
 .home-page {
     position: relative;
-    padding: 15px;
+
     min-height: calc(100vh - 95px);
+    padding: 15px;
 
     .icon {
         position: absolute;
         right: 0;
         bottom: 0;
+
         width: 635px;
         height: 715px;
     }
 }
 
 .home-page__content {
-    margin-top: 10vh;
     max-width: 680px;
+    margin-top: 10vh;
+
     color: var(--main-font);
 
     h1 {
         text-transform: uppercase;
-        font-weight: bold;
+
         font-size: mr.rem(34px);
+        font-weight: bold;
     }
 
     p {
-        font-weight: 300;
         font-size: mr.rem(28px);
+        font-weight: 300;
     }
 }
 </style>

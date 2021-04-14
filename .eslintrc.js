@@ -6,11 +6,22 @@ module.exports = {
     },
     extends: [
         '@nuxtjs/eslint-config-typescript',
-        'prettier',
-        // 'prettier/vue',
-        'plugin:prettier/recommended',
+        'plugin:no-use-extend-native/recommended',
         'plugin:nuxt/recommended',
+        'plugin:prettier/recommended',
+        'plugin:promise/recommended',
+        'plugin:sonarjs/recommended',
+        'prettier',
     ],
-    plugins: ['prettier'],
-    rules: {},
+    plugins: [
+        'no-use-extend-native',
+        'optimize-regex',
+        'prettier',
+        'promise',
+        'sonarjs',
+    ],
+    rules: {
+        'optimize-regex/optimize-regex': 'warn',
+        'sonarjs/cognitive-complexity': ['error', 30],
+    },
 };

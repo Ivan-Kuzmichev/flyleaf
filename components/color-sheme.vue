@@ -28,10 +28,11 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .theme-switcher {
     display: flex;
+    overflow: hidden;
     flex-direction: column;
+
     width: 40px;
     height: 40px;
-    overflow: hidden;
 
     .wrapper {
         transition: 0.5s ease-in;
@@ -58,9 +59,11 @@ export default Vue.extend({
     svg {
         width: 40px;
         height: 40px;
+
         cursor: pointer;
-        opacity: 0.7;
         transition: 0.5s ease-in;
+
+        opacity: 0.7;
 
         symbol {
             fill: var(--main);

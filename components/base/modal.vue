@@ -53,6 +53,7 @@ export default Vue.extend({
     right: 0;
     bottom: 0;
     left: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -64,39 +65,47 @@ export default Vue.extend({
     right: 0;
     bottom: 0;
     left: 0;
+
     background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal {
     position: relative;
     z-index: 1;
-    padding: 15px;
-    max-width: 370px;
+
     width: 100%;
+    max-width: 370px;
+    padding: 15px;
+
+    transform: translateY(-15vh);
+
     border-radius: 10px;
     background-color: var(--bg-main);
-    transform: translateY(-15vh);
 }
 
 .modal__header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
     margin-bottom: 20px;
 
     .title {
-        font-size: 1.2rem;
-        color: var(--main-font);
         opacity: 0.8;
+        color: var(--main-font);
+
+        font-size: 1.2rem;
     }
 
     .close {
         width: 20px;
         height: 20px;
+
         cursor: pointer;
-        color: var(--main-font);
-        opacity: 0.8;
         transition: 0.5s ease-in;
+
+        opacity: 0.8;
+        color: var(--main-font);
 
         &:hover,
         &:focus-visible {

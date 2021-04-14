@@ -1,7 +1,7 @@
 @mixin initGrid($class, $breakpoints, $gap) {
     #{$class} {
-        padding: 0 $gap / 2;
         margin: 0 auto;
+        padding: 0 $gap / 2;
 
         @each $breakpoint, $width in $breakpoints {
             @media (max-width: $breakpoint) {

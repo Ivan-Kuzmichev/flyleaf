@@ -1,8 +1,10 @@
 module.exports = {
-    extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
-    plugins: ['stylelint-scss'],
-    // add your custom config here
-    // https://stylelint.io/user-guide/configuration
+    extends: [
+        'stylelint-config-standard',
+        'stylelint-config-prettier',
+        'stylelint-order-config-yandex',
+    ],
+    plugins: ['stylelint-scss', 'stylelint-order'],
     rules: {
         'at-rule-no-unknown': null,
     },

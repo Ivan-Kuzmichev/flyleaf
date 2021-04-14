@@ -15,9 +15,11 @@ export default {
 
 .logo {
     a {
-        font-size: mr.rem(22px);
-        color: var(--main-font);
         text-decoration: none;
+
+        color: var(--main-font);
+
+        font-size: mr.rem(22px);
     }
 }
 </style>

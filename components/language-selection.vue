@@ -33,12 +33,14 @@ export default Vue.extend({
 .language-selection__content {
     margin: 0;
     padding: 0;
+
     list-style-type: none;
 }
 
 .language-selection__item {
-    padding: 10px;
     margin: 0 10px;
+    padding: 10px;
+
     border-bottom: 1px solid var(--shadow);
 
     &:last-child {
@@ -49,15 +51,19 @@ export default Vue.extend({
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: mr.rem(18px);
-        color: var(--main-font);
-        text-decoration: none;
-        opacity: 0.8;
+
         transition: 0.5s ease-in;
+        text-decoration: none;
+
+        opacity: 0.8;
+        color: var(--main-font);
+
+        font-size: mr.rem(18px);
 
         &.nuxt-link-active {
-            opacity: 1;
             text-decoration: underline;
+
+            opacity: 1;
         }
 
         &:hover {

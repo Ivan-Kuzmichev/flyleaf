@@ -25,17 +25,22 @@ export default Vue.extend({
 
     a {
         display: block;
-        padding: 10px;
+
         margin: 0 10px;
-        font-size: mr.rem(18px);
-        color: var(--main-font);
-        text-decoration: none;
-        opacity: 0.8;
+        padding: 10px;
+
         transition: 0.5s ease-in;
+        text-decoration: none;
+
+        opacity: 0.8;
+        color: var(--main-font);
+
+        font-size: mr.rem(18px);
 
         &.nuxt-link-active {
-            opacity: 1;
             text-decoration: underline;
+
+            opacity: 1;
         }
 
         &:hover {

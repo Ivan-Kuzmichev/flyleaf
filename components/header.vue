@@ -28,6 +28,7 @@ export default Vue.extend({
 .header {
     display: flex;
     align-items: center;
+
     padding: 15px;
 
     .logo {
@@ -43,7 +44,8 @@ export default Vue.extend({
 .color-sheme-loading {
     width: 40px;
     height: 40px;
-    opacity: 0.3;
     margin-right: 10px;
+
+    opacity: 0.3;
 }
 </style>
